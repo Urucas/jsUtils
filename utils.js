@@ -9,3 +9,11 @@ Array.prototype.last = function() {
 String.prototype.trim = function() {
 	return this.replace(/^\s+/g,'').replace(/\s+$/g,'');
 }
+
+function getURLVars(urlString) {
+	var vars = {};
+    var parts = urlString.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+	});
+    return vars;
+}
